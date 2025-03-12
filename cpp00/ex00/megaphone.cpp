@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneumann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 16:48:56 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/11 16:48:58 by aneumann         ###   ########.fr       */
+/*   Created: 2025/03/12 11:22:28 by aneumann          #+#    #+#             */
+/*   Updated: 2025/03/12 11:22:28 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <iostream>
 #include <cctype>
