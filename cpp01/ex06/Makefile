@@ -6,15 +6,15 @@
 #    By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/12 12:01:27 by aneumann          #+#    #+#              #
-#    Updated: 2025/03/13 15:58:27 by aneumann         ###   ########.fr        #
+#    Updated: 2025/03/13 16:34:41 by aneumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = g++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC = main.cpp Harl.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = conflict
+NAME = levels
 
 all: $(NAME)
 
