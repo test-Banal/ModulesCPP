@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:22:04 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/13 16:41:34 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/03/25 14:22:55 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Harl
     public:
         Harl();
         void complain(std::string level);
+    
     private:
         void    _debug(void);
         void    _info(void);

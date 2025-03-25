@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:22:38 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/13 16:52:07 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/03/25 14:43:14 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,30 +46,42 @@ void Harl::_error(void)
 }
 void Harl::complain(std::string level)
 {
-    const std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    int index = -1;
+	std::string	complaintLevels[] = {
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
+	};
+	int			filter_level = -1;
 
-    // Trouver l'index correspondant au niveau donné
-    for (int i = 0; i < 4; i++) {
-        if (levels[i] == level) {
-            index = i;
-            break;
-        }
-    }
+	for (int cur = 0; cur < 4; cur++)
+	{
+		if (level == complaintLevels[cur])
+		{
+			filter_level = cur;
+			break;
+		}
+	}
 
-    // Utiliser le switch avec fall-through pour afficher les messages à partir du niveau donné
-    switch (index) {
-        case 0:
-            _debug();
-        case 1:
-            _info();
+	switch (filter_level)
+	{
+	case 0:
+		_debug();
+        //fallthrough
+	case 1:
+		_info();
+        //fallthrough
         case 2:
-            _warning();
-        case 3:
-            _error();
-            break;
-        default:
-            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-            break;
-    }
+		_warning();
+       //fallthrough
+	case 3:
+		_error();
+		break;
+	default:
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	}
+	return;
 }
+
+//fallthrough is a feature in C++ that allows the flow of control to pass from one case of a switch statement to the next one.
+//fallthrough is used to execute multiple cases in a single case block. sinon rajouter un break; pour stopper le switch
