@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 17:47:01 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/25 17:47:25 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/03/25 19:10:03 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,18 @@
 class ScavTrap : public ClapTrap
 {
 public:
+    ScavTrap();
     ScavTrap(std::string name);
-    ScavTrap(ScavTrap const & src);
-    ~ScavTrap(void);
+    ScavTrap(ScavTrap const &src);
+    ~ScavTrap();
+    ScavTrap &operator=(ScavTrap const &rhs);
 
-    ScavTrap & operator=(ScavTrap const & rhs);
-
-    void challengeNewcomer(void);
+    void			attack(std::string const &target);
+    void			guardGate();
+    bool const      guardGateMode();
+    
+private :
+    bool _guardGateMode;
 };
 
 #endif
