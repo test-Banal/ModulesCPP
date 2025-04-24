@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 12:55:42 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/20 14:57:09 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:15:40 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,33 @@
 Fixed::Fixed() : _value(0)
 {
     std::cout << "Default constructor called" << std::endl;
+    return;
 }
 
 Fixed::Fixed(const int value) : _value(value << _fractional_bits)
 {
     std::cout << "Int constructor called" << std::endl;
+    return;
 }
 
 Fixed::Fixed(const float value) : _value(roundf(value * (1 << _fractional_bits)))
 {
     std::cout << "Float constructor called" << std::endl;
+    return;
+}
+Fixed &Fixed::operator=(Fixed const &rhs)
+{
+    std::cout << "Copy assignment operator called " << std::endl;   //rhs : cad : right hande side of the operator
+    if (this != &rhs)
+        this->_value = rhs.getRawBits();
+    return *this;
 }
 
-Fixed::Fixed(Fixed const &src) : _value(src._value)
+Fixed::Fixed(Fixed const &src) 
 {
     std::cout << "Copy constructor called" << std::endl;
+    *this = src; 
+    
 }
 
 Fixed::~Fixed()
@@ -38,13 +50,6 @@ Fixed::~Fixed()
     std::cout << "Destructor called" << std::endl;
 }
 
-Fixed &Fixed::operator=(Fixed const &rhs)
-{
-    std::cout << "Copy assignment operator called" << std::endl;   //rhs : right hande side of the operator
-    if (this != &rhs)
-        this->_value = rhs.getRawBits();
-    return *this;
-}
 
 int Fixed::getRawBits(void) const
 {
@@ -60,12 +65,13 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-    return (float)this->_value / (1 << _fractional_bits);
+    return (float)this->_value / (float)(1 << this->_fractional_bits);
 }
 
 int Fixed::toInt(void) const
 {
-    return this->_value >> _fractional_bits;
+    return roundf(this->_value / (1 << this->_fractional_bits)); 
+    // return this->_value >> _fractional_bits; cf Precision
 }
 
 std::ostream &operator<<(std::ostream &os, Fixed const &rhs)
@@ -73,3 +79,9 @@ std::ostream &operator<<(std::ostream &os, Fixed const &rhs)
     os << rhs.toFloat();
     return os;
 }
+    //Precision
+    //Cette version convertit la valeur en float, puis divise par 2fractional_bits2fractional_bits pour obtenir la valeur réelle, et ensuite l'arrondit à l'entier le plus proche.
+    //C'est plus précis
+    // return this->_value >> _fractional_bits;  Cette version utilise un décalage binaire à droite (>>), ce qui correspond à une division entière par 2fractional_bits2fractional_bits. 
+    //C’est une méthode plus rapide, mais elle tronque vers zéro (ne fait pas d’arrondi). 
+    // Si vous voulez un arrondi, utilisez la méthode de la division entière (roundf).

@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 12:58:30 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/20 14:46:57 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/24 18:43:28 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Fixed
 {
     public:
         Fixed();
-        Fixed(Fixed const &src);
         Fixed(const int value);
         Fixed(const float value);
+        Fixed(Fixed const &src);
         ~Fixed();
-
+        
         Fixed &operator=(Fixed const &rhs);
 
         float toFloat(void) const;
