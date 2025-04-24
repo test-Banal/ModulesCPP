@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 11:22:28 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/12 11:22:28 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/24 20:19:46 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,18 @@ int main(int argc, char **argv)
         std::cerr << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
         return 1;
     }
-
-    for (int i = 1; i < argc; i++)
+    else
     {
-        for (int j = 0; argv[i][j] != '\0'; j++)
+        for (int i = 1; i < argc; i++)
         {
-            std::cout << (char)std::toupper(argv[i][j]);
+            for (int j = 0; argv[i][j] != '\0'; j++)
+            {
+                std::cout << (char)std::toupper(argv[i][j]);
+            }
         }
-        std::cout << " ";
+        std::cout << std::endl; //saut de ligne
     }
-    std::cout << std::endl;
-
     return 0;
 }
 
-
-//ici utilisation cerr mais on peut aussi utiliser cout pour afficher le message d'erreur
+//cerr mais on peut aussi utiliser cout pour afficher le message d'erreur mais sinon std::cout << ok 

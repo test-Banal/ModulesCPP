@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:49:24 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/12 11:23:05 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/24 20:48:30 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void    Contact::set_infos(std::string first_name, std::string last_name,
 
 void    Contact::show_info(void)
 {
-    std::cout << "First name: " << truncate(this->first_name, 10) << std::endl;
-    std::cout << "Last name: " << truncate(this->last_name, 10) << std::endl;
-    std::cout << "Nickname: " << truncate(this->nickname, 10) << std::endl;
+    std::cout << "First name: " << truncate(this->first_name, 100) << std::endl;
+    std::cout << "Last name: " << truncate(this->last_name, 100) << std::endl;
+    std::cout << "Nickname: " << truncate(this->nickname, 100) << std::endl;
     std::cout << "Phone number: " << this->phone_number << std::endl;
     std::cout << "Darkest secret: " << this->darkest_secret << std::endl;
 }
