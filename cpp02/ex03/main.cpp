@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:11:20 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/25 18:00:46 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:12:02 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main( void )
     Point p2 (3, 0.74); //non
     Point p3(6, 4);
     Point p4(7, 6);
-    Point p5(4.5, 3.1);
+    Point p5(4.5, 2.995);
 
  
     std::cout << "Point a: " << a << std::endl;
