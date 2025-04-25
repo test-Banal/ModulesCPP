@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 12:55:42 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/24 19:15:40 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/25 17:52:54 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Fixed::Fixed(const float value) : _value(roundf(value * (1 << _fractional_bits))
 }
 Fixed &Fixed::operator=(Fixed const &rhs)
 {
-    std::cout << "Copy assignment operator called " << std::endl;   //rhs : cad : right hande side of the operator
+    std::cout << "Copy assignment operator called " << std::endl; 
     if (this != &rhs)
         this->_value = rhs.getRawBits();
     return *this;

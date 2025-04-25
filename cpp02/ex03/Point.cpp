@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:08:07 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/21 13:37:12 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/25 17:55:38 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ Point::~Point()
 
 Point &Point::operator=(Point const &rhs)
 {
-    if (this != &rhs)
-    {
-        // _x and _y are const, so they cannot be assigned
-    }
+    (void)rhs;
     return *this;
 }
 

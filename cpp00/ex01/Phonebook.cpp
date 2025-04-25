@@ -6,16 +6,17 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:50:21 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/12 11:23:21 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/25 17:32:00 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 #include "utils.hpp"
 
-Phonebook::Phonebook(void)
+Phonebook::Phonebook(void) : _size(0)
 {
-    this->size = 0;
+    // for (int i = 0; i < 8; i++)
+    //     this->contacts[i] = Contact();
 }
 
 Phonebook::~Phonebook(void)
@@ -24,7 +25,7 @@ Phonebook::~Phonebook(void)
 
 int Phonebook::get_size()
 {
-    return this->size;
+    return _size;
 }
 
 void Phonebook::addContact()

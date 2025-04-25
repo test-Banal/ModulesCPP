@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:11:20 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/24 19:36:35 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:00:46 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main( void )
     Point b(5, 5);
     Point c(4, 1);
     Point p1(4, 3);
-    Point p2(3, 2);
-    //Point p2 (3, 0.8);
+   // Point p2(3, 2);   //oui
+    Point p2 (3, 0.74); //non
     Point p3(6, 4);
     Point p4(7, 6);
     Point p5(4.5, 3.1);
