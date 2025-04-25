@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:50:47 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/25 18:38:57 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/25 19:03:57 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@
 #include <cctype>
 #include <cstdlib> 
 #include "Contact.hpp"
-#include <array>
 
 #define MAX_CONTACTS 8
-
-class PhoneBook
+class Phonebook
 {
 private:
 	int _size;
-	std::array<Contact, MAX_CONTACTS> _contacts;
+    Contact     _contacts[MAX_CONTACTS];
+	int _index;
+
 
 public:
-	PhoneBook();
-	~PhoneBook();
+	Phonebook();
+	~Phonebook();
 
 	int get_size();
 	void add_contact();

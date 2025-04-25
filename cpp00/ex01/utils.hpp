@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:51:13 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/25 18:39:24 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/25 19:03:10 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 
-void	getinput(std::string &str, std::string text);
+std::string get_input(const std::string& prompt);
+std::string truncate(const std::string& str, size_t max_length);
 
 #endif

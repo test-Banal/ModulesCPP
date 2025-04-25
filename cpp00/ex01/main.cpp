@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:49:58 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/25 18:38:12 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:52:27 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,21 @@ int main()
         if (command == "EXIT")
             break;
         else if (command == "ADD")
-            phonebook.addContact();
+            phonebook.add_contact();
         else if (command == "SEARCH")
         {
             if (phonebook.get_size() == 0)
                 std::cout << "The phonebook is empty." << std::endl;
             else
             {
-                phonebook.listContacts();
+                phonebook.list_contacts();
                 std::cout << "Enter the index of the contact you want to display: ";
                 std::getline(std::cin, command);
                 if (command.length() == 1 && std::isdigit(command[0]))
                 {
                     int index = std::atoi(command.c_str());
                     if (index >= 0 && index < phonebook.get_size())
-                        phonebook.displayContact(index);
+                        phonebook.display_contact(index);
                     else
                         std::cout << "Invalid index." << std::endl;
                 }
