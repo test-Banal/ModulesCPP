@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:49:44 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/12 11:23:08 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:37:58 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+
 
 class Contact
 {
@@ -39,7 +40,6 @@ class Contact
         std::string	get_phone_number()const;
         std::string	get_darkest_secret()const;
 };
-
 
 
 

@@ -6,12 +6,16 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:50:21 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/25 17:32:00 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:38:34 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 #include "utils.hpp"
+#include <iomanip>
+#include <iostream>
+#include <algorithm> // pour std::min
+
 
 Phonebook::Phonebook(void) : _size(0)
 {

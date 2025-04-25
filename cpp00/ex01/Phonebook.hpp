@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:50:47 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/25 17:32:42 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:38:57 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ public:
 	void list_contacts();
 	void display_contact(int index);
 };
+
 #endif
