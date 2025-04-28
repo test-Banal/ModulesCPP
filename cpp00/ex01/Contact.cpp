@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:49:24 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/25 18:37:43 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/28 10:48:31 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ void    Contact::show_info(void)
     std::cout << "Darkest secret: " << this->darkest_secret << std::endl;
 }
 
-std::string Contact::get_first_name()const //a modifier
+std::string Contact::get_first_name()const
 {
     return truncate(this->first_name, 10);
 }
 
-std::string Contact::get_last_name()const // a modifier
+std::string Contact::get_last_name()const
 {
     return truncate(this->last_name, 10);
 }
 
-std::string Contact::get_nickname()const // a modifier
+std::string Contact::get_nickname()const
 {
     return truncate(this->nickname, 10);
 }

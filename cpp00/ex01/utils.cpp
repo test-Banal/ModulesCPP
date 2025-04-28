@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:50:55 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/25 19:02:40 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/28 11:03:04 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,7 @@ std::string get_input(const std::string& prompt)
         std::getline(std::cin, input);
         if (!input.empty() && input.find_first_not_of(' ') != std::string::npos)
             break;
-        std::cout << "Champ vide, réessaye." << std::endl;
+        std::cout << "Cannot be empty, Please enter again." << std::endl;
     }
     return input;
 }
-
-// std::string get_input()
-// {
-//     std::string input;
-//     std::getline(std::cin, input);
-//     return input;
-// }

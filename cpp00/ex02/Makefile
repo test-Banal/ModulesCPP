@@ -6,7 +6,7 @@
 #    By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/12 11:24:11 by aneumann          #+#    #+#              #
-#    Updated: 2025/03/12 11:24:11 by aneumann         ###   ########.fr        #
+#    Updated: 2025/04/28 10:43:50 by aneumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CXX = g++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 SRC = Account.cpp tests.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = Phonebook
+NAME = GlobalBanksters
 
 all: $(NAME)
 
