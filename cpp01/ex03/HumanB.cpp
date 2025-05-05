@@ -6,13 +6,13 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:29:58 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/13 14:51:09 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/30 14:55:30 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : name(name)
+HumanB::HumanB(std::string name) : name(name), weapon(NULL)
 {
     return;
 }

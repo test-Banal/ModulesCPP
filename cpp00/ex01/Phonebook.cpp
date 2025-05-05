@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:50:21 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/28 11:03:36 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/01 13:59:19 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void Phonebook::add_contact()
     std::string phone_number = get_input("Phone Number: ");
     std::string darkest_secret = get_input("Darkest Secret: ");
 
-    // Ajout ou remplacement du contact à l’index courant
+    // Ajout/remplacement du contact à l’index courant
     this->_contacts[this->_index].set_infos(first_name, last_name, nickname, phone_number, darkest_secret);
 
     // Incrémentation circulaire de l’index (repart à 0 après 7)

@@ -6,18 +6,19 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:13 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/05 13:32:57 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/05 14:02:58 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef CLAP_TRAP_HPP
+#define CLAP_TRAP_HPP
 
 #include <string>
 #include <iostream>
 
+
 class ClapTrap {
-private:
+protected:
     std::string     _name;
     unsigned int    _hitPoints;
     unsigned int    _energyPoints;

@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:22:38 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/25 14:43:14 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/30 15:01:45 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void Harl::complain(std::string level)
 	case 1:
 		_info();
         //fallthrough
-        case 2:
+    case 2:
 		_warning();
        //fallthrough
 	case 3:

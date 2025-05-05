@@ -6,40 +6,44 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:10 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/05 13:48:26 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/05 13:48:56 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
     std::cout << "--- Creating Traps ---" << std::endl;
     ClapTrap clap("CL4P-TP");
     ScavTrap scav("SC4V-TP");
-    ScavTrap scavCopy(scav);
+    FragTrap frag("FR4G-TP");
     
-    std::cout << "\n--- Testing ClapTrap functionality ---" << std::endl;
+    std::cout << "\n--- Testing basic functionality ---" << std::endl;
     clap.attack("Target");
+    scav.attack("Enemy");
+    frag.attack("Baddie");
+    
+    std::cout << "\n--- Testing damage and repair ---" << std::endl;
     clap.takeDamage(5);
     clap.beRepaired(3);
     
-    std::cout << "\n--- Testing ScavTrap functionality ---" << std::endl;
-    scav.attack("Enemy");
     scav.takeDamage(30);
     scav.beRepaired(15);
+    
+    frag.takeDamage(40);
+    frag.beRepaired(20);
+    
+    std::cout << "\n--- Testing special abilities ---" << std::endl;
     scav.guardGate();
+    frag.highFivesGuys();
     
-    std::cout << "\n--- Testing inheritance chain ---" << std::endl;
-    // Test that ScavTrap inherits ClapTrap's methods
-    scavCopy.takeDamage(25);
-    scavCopy.beRepaired(10);
-    
-    // Test that ScavTrap's attributes are properly initialized
-    std::cout << "\nScavTrap " << scav.getName() << " stats:" << std::endl;
-    std::cout << "- Hit points: " << scav.getHitPoints() << std::endl;
-    std::cout << "- Energy points: " << scav.getEnergyPoints() << std::endl;
-    std::cout << "- Attack damage: " << scav.getAttackDamage() << std::endl;
+    // Test that FragTrap's attributes are properly initialized
+    std::cout << "\nFragTrap " << frag.getName() << " stats:" << std::endl;
+    std::cout << "- Hit points: " << frag.getHitPoints() << std::endl;
+    std::cout << "- Energy points: " << frag.getEnergyPoints() << std::endl;
+    std::cout << "- Attack damage: " << frag.getAttackDamage() << std::endl;
     
     std::cout << "\n--- End of tests ---" << std::endl;
     return 0;

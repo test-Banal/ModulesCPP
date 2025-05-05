@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:02:06 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/13 16:10:57 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/30 15:08:56 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 #include <fstream>
 #include <string>
 
-void replaceAndWrite(const std::string& inputFile, const std::string& s1, const std::string& s2) {
+int replaceAndWrite(const std::string& inputFile, const std::string& s1, const std::string& s2) {
     std::ifstream inFile(inputFile.c_str());
     if (!inFile) {
         std::cerr << "Error: Cannot open input file." << std::endl;
-        return;
+        return 1;
     }
 
     std::string outputFile = inputFile + ".replace";
     std::ofstream outFile(outputFile.c_str());
     if (!outFile) {
         std::cerr << "Error: Cannot create output file." << std::endl;
-        return;
+        return 1;
     }
 
     std::string line;
@@ -40,6 +40,7 @@ void replaceAndWrite(const std::string& inputFile, const std::string& s1, const 
 
     inFile.close();
     outFile.close();
+    return 0;
 }
 
 int main(int argc, char* argv[]) {
@@ -57,8 +58,12 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    replaceAndWrite(filename, s1, s2);
-    std::cout << "Replacement completed. Check " << filename << ".replace" << std::endl;
+    if (replaceAndWrite(filename, s1, s2) == 0) {
+        std::cout << "Replacement completed. Check " << filename << ".replace" << std::endl;
+    } else {
+        std::cerr << "Error: Replacement failed." << std::endl;
+    }
+   // std::cout << "Replacement completed. Check " << filename << ".replace" << std::endl; //attenion si 
     
     return 0;
 } 

@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 12:27:40 by aneumann          #+#    #+#             */
-/*   Updated: 2025/03/12 20:27:06 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/04/30 14:45:51 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Zombie::Zombie(std::string name) : _name(name)
     return;
 }
 
-Zombie::~Zombie()
+Zombie::~Zombie(void)
 {
     std::cout << this->_name <<" is destroyed" << std::endl;
     return;
