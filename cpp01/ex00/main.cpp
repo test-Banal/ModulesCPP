@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 19:03:09 by aneumann          #+#    #+#             */
-/*   Updated: 2025/04/30 14:29:44 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/06 18:57:48 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void randomChump(std::string name);
 
 int main()
 {
-    std::cout << "Creating a Zombie on the stack called ZombieHeap" << std::endl;
+    std::cout << "Creating a classic Zombie on the stack called ZombieHeap" << std::endl;
     Zombie zombieHeap = Zombie("ZombieHeap");
     zombieHeap.announce();
     std::cout << "\n";

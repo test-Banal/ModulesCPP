@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/aneumann/Documents/CPLUSPLUS/ModulesCPP/cpp01/ex05",
-      "program": "/home/aneumann/Documents/CPLUSPLUS/ModulesCPP/cpp01/ex05/build/Debug/outDebug",
+      "cwd": "/home/aneumann/Documents/CPLUSPLUS/ModulesCPP/cpp01/ex03",
+      "program": "/home/aneumann/Documents/CPLUSPLUS/ModulesCPP/cpp01/ex03/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
