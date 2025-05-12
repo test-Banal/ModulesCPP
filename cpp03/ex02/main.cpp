@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:10 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/05 13:48:56 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/12 18:05:46 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ int main() {
     scav.guardGate();
     frag.highFivesGuys();
     
-    // Test that FragTrap's attributes are properly initialized
-    std::cout << "\nFragTrap " << frag.getName() << " stats:" << std::endl;
+    // Tester que les attributs de FragTrap sont correctement initialisés    std::cout << "\nFragTrap " << frag.getName() << " stats:" << std::endl;
     std::cout << "- Hit points: " << frag.getHitPoints() << std::endl;
     std::cout << "- Energy points: " << frag.getEnergyPoints() << std::endl;
     std::cout << "- Attack damage: " << frag.getAttackDamage() << std::endl;

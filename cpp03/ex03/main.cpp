@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:10 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/05 14:19:30 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/12 18:07:36 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "DiamondTrap.hpp"
 
 int main() {
-    // Test constructors
+    // Test constructeurs
     std::cout << "--- Creating Traps ---" << std::endl;
     ClapTrap clap("CL4P-TP");
     ScavTrap scav("SC4V-TP");
@@ -27,7 +27,7 @@ int main() {
     clap.attack("Target");
     scav.attack("Enemy");
     frag.attack("Baddie");
-    diamond.attack("Boss"); // Should use ScavTrap's attack
+    diamond.attack("Boss"); // Devrait utiliser l'attaque de ScavTrap
     
     std::cout << "\n--- Testing damage and repair ---" << std::endl;
     diamond.takeDamage(30);
@@ -36,11 +36,12 @@ int main() {
     std::cout << "\n--- Testing special abilities ---" << std::endl;
     scav.guardGate();
     frag.highFivesGuys();
-    diamond.guardGate();      // Inherited from ScavTrap
-    diamond.highFivesGuys();  // Inherited from FragTrap
-    diamond.whoAmI();         // DiamondTrap's special ability
+    diamond.guardGate();      // Herite de ScavTrap
+    diamond.highFivesGuys();  // Herite de FragTrap
+    diamond.whoAmI();         // Capacité spéciale de DiamondTrap
     
-    // Test that DiamondTrap's attributes are properly initialized
+
+    // Tester que les attributs de DiamondTrap sont biem initialisés    
     std::cout << "\nDiamondTrap " << diamond.getName() << " stats:" << std::endl;
     std::cout << "- Hit points: " << diamond.getHitPoints() << std::endl;
     std::cout << "- Energy points: " << diamond.getEnergyPoints() << std::endl;

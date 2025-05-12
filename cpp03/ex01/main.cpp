@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:10 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/05 13:48:26 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/12 18:05:23 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int main() {
     scav.guardGate();
     
     std::cout << "\n--- Testing inheritance chain ---" << std::endl;
-    // Test that ScavTrap inherits ClapTrap's methods
+    // Test que ScavTrap herite des methodes de ClapTrap
     scavCopy.takeDamage(25);
     scavCopy.beRepaired(10);
     
-    // Test that ScavTrap's attributes are properly initialized
+    // Test que ScavTrap herite des methodes de ClapTrap
     std::cout << "\nScavTrap " << scav.getName() << " stats:" << std::endl;
     std::cout << "- Hit points: " << scav.getHitPoints() << std::endl;
     std::cout << "- Energy points: " << scav.getEnergyPoints() << std::endl;
