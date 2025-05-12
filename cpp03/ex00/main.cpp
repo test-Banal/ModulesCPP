@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:10 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/12 18:31:27 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/12 18:52:22 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int main() {
     ClapTrap defaultTrap;
     ClapTrap c1("C1");
     ClapTrap c2("C2");
-    ClapTrap c3(c1);
+    ClapTrap c3(c1); 
     
-    std::cout << "\n--- Testing basic functionality ---" << std::endl;
+    std::cout << "\n\n--- Testing basic functionality ---" << std::endl;
     
 	// attack test
     c1.attack("Target Dummy");
@@ -43,17 +43,17 @@ int main() {
     
     // normalement , plus d'énergie
     std::cout << std::endl;
-    std::cout << "Hit points before attacks: " << c2.getHitPoints() << std::endl;
+    std::cout << "Energy points before attacks: " << c2.getEnergyPoints() << std::endl;
     c2.attack("Energy_Tester");
-    std::cout << "Hits points before repaired himslef: " << c2.getHitPoints() << std::endl;
+    std::cout << "Energy points before repaired himslef: " << c2.getEnergyPoints() << std::endl;
     c2.beRepaired(5);
     
-    std::cout << "\n--- Testing hit points depletion ---" << std::endl;
+    std::cout << "\n\n--- Testing hit points depletion ---" << std::endl;
     // test epuisement de points de vie
     c3.takeDamage(15); // + de points de vie
     c3.attack("Dead Target"); // Ne doit pas fonctionner
     c3.beRepaired(5);  // Ne doit pas fonctionner
     
-    std::cout << "\n--- End of tests ---" << std::endl;
+    std::cout << "\n\n--- End of tests ---" << std::endl;
     return 0;
 }

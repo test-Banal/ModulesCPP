@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:10 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/12 18:05:23 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/12 18:53:13 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,28 @@ int main() {
     ScavTrap scav("SC4V-TP");
     ScavTrap scavCopy(scav);
     
-    std::cout << "\n--- Testing ClapTrap functionality ---" << std::endl;
+    std::cout << "\n\n--- Testing ClapTrap functionality ---" << std::endl;
     clap.attack("Target");
     clap.takeDamage(5);
     clap.beRepaired(3);
     
-    std::cout << "\n--- Testing ScavTrap functionality ---" << std::endl;
+    std::cout << "\n\n--- Testing ScavTrap functionality ---" << std::endl;
     scav.attack("Enemy");
     scav.takeDamage(30);
     scav.beRepaired(15);
     scav.guardGate();
     
-    std::cout << "\n--- Testing inheritance chain ---" << std::endl;
+    std::cout << "\n\n--- Testing inheritance chain ---" << std::endl;
     // Test que ScavTrap herite des methodes de ClapTrap
     scavCopy.takeDamage(25);
     scavCopy.beRepaired(10);
     
     // Test que ScavTrap herite des methodes de ClapTrap
-    std::cout << "\nScavTrap " << scav.getName() << " stats:" << std::endl;
+    std::cout << "\n\nScavTrap " << scav.getName() << " stats:" << std::endl;
     std::cout << "- Hit points: " << scav.getHitPoints() << std::endl;
     std::cout << "- Energy points: " << scav.getEnergyPoints() << std::endl;
     std::cout << "- Attack damage: " << scav.getAttackDamage() << std::endl;
     
-    std::cout << "\n--- End of tests ---" << std::endl;
+    std::cout << "\n\n--- End of tests ---" << std::endl;
     return 0;
 }
