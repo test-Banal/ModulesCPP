@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:10 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/12 18:05:46 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/13 13:27:50 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int main() {
     ScavTrap scav("SC4V-TP");
     FragTrap frag("FR4G-TP");
     
-    std::cout << "\n--- Testing basic functionality ---" << std::endl;
+    std::cout << "\n\n--- Testing basic functionality ---" << std::endl;
     clap.attack("Target");
     scav.attack("Enemy");
     frag.attack("Baddie");
     
-    std::cout << "\n--- Testing damage and repair ---" << std::endl;
+    std::cout << "\n\n--- Testing damage and repair ---" << std::endl;
     clap.takeDamage(5);
     clap.beRepaired(3);
     
@@ -35,7 +35,7 @@ int main() {
     frag.takeDamage(40);
     frag.beRepaired(20);
     
-    std::cout << "\n--- Testing special abilities ---" << std::endl;
+    std::cout << "\n\n--- Testing special abilities ---" << std::endl;
     scav.guardGate();
     frag.highFivesGuys();
     
