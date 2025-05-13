@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:10 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/12 18:53:13 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/13 11:42:44 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main() {
     std::cout << "--- Creating Traps ---" << std::endl;
     ClapTrap clap("CL4P-TP");
     ScavTrap scav("SC4V-TP");
-    ScavTrap scavCopy(scav);
+    ScavTrap scavCopy("SC4V-TP-Copy");
     
     std::cout << "\n\n--- Testing ClapTrap functionality ---" << std::endl;
     clap.attack("Target");

@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 17:46:38 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/12 18:51:33 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/13 11:43:34 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
 
 ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src) {
     std::cout << "ScavTrap copy constructor called" << std::endl;
-    // *this = src; //doute ici
+    *this = src;
 }
 
 ScavTrap::~ScavTrap() {
