@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:16 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/12 18:44:26 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/13 13:51:48 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
               << " hit points! Current hit points: " << _hitPoints << std::endl;
 }
 
-std::string ClapTrap::getName() const {
+const std::string& ClapTrap::getName() const {
     return _name;
 }
 

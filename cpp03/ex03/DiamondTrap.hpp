@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 14:06:47 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/05 14:24:23 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/13 14:48:25 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "FragTrap.hpp"
 
 
-class DiamondTrap : public ScavTrap, public FragTrap {
+class DiamondTrap : public FragTrap, public ScavTrap {
 public:
     DiamondTrap();
     DiamondTrap(const std::string& name);
@@ -27,18 +27,16 @@ public:
 
     DiamondTrap& operator=(const DiamondTrap& rhs);
 
-    void attack(const std::string& target);
+    using ScavTrap::attack; 
+    
     void whoAmI();
     
-    std::string getName() const { return _name; }
-    unsigned int getHitPoints() const { return _hitPoints; }
-    unsigned int getEnergyPoints() const { return _energyPoints; }
-    unsigned int getAttackDamage() const { return _attackDamage; }
+    std::string getName() const;
+    unsigned int getHitPoints() const;
+    unsigned int getEnergyPoints() const;
+    unsigned int getAttackDamage() const;
 private:
     std::string _name; 
-    unsigned int _hitPoints;
-    unsigned int _energyPoints;
-    unsigned int _attackDamage;
 };
 #endif
 

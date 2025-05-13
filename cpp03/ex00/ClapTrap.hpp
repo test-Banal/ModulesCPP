@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:13 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/12 18:24:38 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/13 13:51:54 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ private:
     unsigned int    _energyPoints;
     unsigned int    _attackDamage;
 
-public:
     ClapTrap(); //constructeur par défaut
+public:
     ClapTrap(const std::string& name); // constructeur avec un nom
     ClapTrap(const ClapTrap& src); // constructeur de copie
     ~ClapTrap(); // destructeur
@@ -35,7 +35,7 @@ public:
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
-    std::string getName() const;
+    const std::string& getName() const;
     unsigned int getHitPoints() const;
     unsigned int getEnergyPoints() const;
     unsigned int getAttackDamage() const;

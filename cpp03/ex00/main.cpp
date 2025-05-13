@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:48:10 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/12 18:52:22 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/13 13:52:30 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main() {
     // Test constructeurs
     std::cout << "--- Creating ClapTraps ---" << std::endl;
-    ClapTrap defaultTrap;
+    // ClapTrap defaultTrap;
     ClapTrap c1("C1");
     ClapTrap c2("C2");
     ClapTrap c3(c1); 
