@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneumann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 18:46:14 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/23 18:46:15 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/23 18:59:09 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 MateriaSource::MateriaSource() {
     //std::cout << "MateriaSource default constructor called" << std::endl;
-    // Initialisation du tableau de templates à NULL
     for (int i = 0; i < templateSize; i++) {
         this->templates[i] = NULL;
     }
@@ -28,7 +27,6 @@ MateriaSource::MateriaSource(MateriaSource const & src) {
         this->templates[i] = NULL;
     }
     
-    // Copie profonde des templates
     for (int i = 0; i < templateSize; i++) {
         if (src.templates[i] != NULL) {
             this->templates[i] = src.templates[i]->clone();
@@ -75,12 +73,14 @@ void MateriaSource::learnMateria(AMateria* m) {
     for (int i = 0; i < templateSize; i++) {
         if (this->templates[i] == NULL) {
             this->templates[i] = m;
-            std::cout << "MateriaSource learns " << m->getType() << " at slot " << i << std::endl;
+            
+            //ici pour mon test
+            //std::cout << "MateriaSource learns " << m->getType() << " at slot " << i << std::endl;
             return;
         }
     }
     std::cout << "MateriaSource is full, cannot learn more materias" << std::endl;
-    delete m; // On doit supprimer la materia pour éviter les fuites mémoire
+    delete m;
 }
 
 // Créer une nouvelle materia à partir d'un type connu
@@ -88,7 +88,9 @@ AMateria* MateriaSource::createMateria(std::string const & type) {
     // Recherche d'un template correspondant au type demandé
     for (int i = 0; i < templateSize; i++) {
         if (this->templates[i] != NULL && this->templates[i]->getType() == type) {
-            std::cout << "MateriaSource creates a " << type << " materia" << std::endl;
+            
+            //ici pour mon test
+            //std::cout << "MateriaSource creates a " << type << " materia" << std::endl;
             return this->templates[i]->clone();
         }
     }

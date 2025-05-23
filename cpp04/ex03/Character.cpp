@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneumann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 18:44:50 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/23 18:44:51 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/23 18:58:44 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,9 @@ void Character::equip(AMateria* m)
         if (_inventory[i] == NULL)
         {
             _inventory[i] = m;
-            std::cout << "Equipped " << m->getType() << " at index " << i << std::endl;
+            
+            //ici pour mon test
+            //std::cout << "Equipped " << m->getType() << " at index " << i << std::endl;
             return;
         }
     }
@@ -100,7 +102,8 @@ void Character::unequip(int idx)
     }
     if (_inventory[idx])
     {
-        std::cout << "Unequipped " << _inventory[idx]->getType() << " from index " << idx << std::endl;
+        //ici pour mon test
+        //std::cout << "Unequipped " << _inventory[idx]->getType() << " from index " << idx << std::endl;
         _inventory[idx] = NULL;
     }
     else
@@ -116,7 +119,9 @@ void Character::use(int idx, ICharacter& target)
     }
     if (_inventory[idx])
     {
-        std::cout << "Using " << _inventory[idx]->getType() << " on " << target.getName() << std::endl;
+        
+        //ici pour mon test
+        //std::cout << "Using " << _inventory[idx]->getType() << " on " << target.getName() << std::endl;
         _inventory[idx]->use(target);
     }
     else
