@@ -16,8 +16,8 @@ Dog &Dog::operator=(const Dog &rhs)
     if (this != &rhs)
     {
         Animal::operator=(rhs);
-        delete _brain; // Free the old brain
-        _brain = new Brain(*rhs._brain); // Create a new brain
+        delete _brain; 
+        _brain = new Brain(*rhs._brain);
     }
     return *this;
 }
@@ -25,7 +25,7 @@ Dog &Dog::operator=(const Dog &rhs)
 Dog::~Dog()
 {
     std::cout << "Dog destructor called" << std::endl;
-    delete _brain; // Free the brain
+    delete _brain; 
 }
 
 void Dog::makeSound() const

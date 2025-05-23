@@ -14,11 +14,11 @@ class Animal
 protected:
     std::string type;
 public:
-    Animal(); //constructeur par défaut
-    Animal(const Animal &src); //constructeur de recopie
-    Animal(const std::string &type); //constructeur avec type
-    virtual ~Animal(); //destructeur
-    Animal &operator=(const Animal &rhs); //opérateur d'affectation
+    Animal();
+    Animal(const Animal &src); 
+    Animal(const std::string &type);
+    virtual ~Animal();
+    Animal &operator=(const Animal &rhs);
 
     virtual void makeSound() const = 0; //méthode virtuelle pure
     std::string getType() const;

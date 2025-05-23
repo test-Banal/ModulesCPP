@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneumann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:00:07 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/16 20:00:08 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/23 15:26:35 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 class Cat : public Animal
 {
 public:
-    Cat(); // Default constructor
-    Cat(const Cat &src); // Copy constructor
-    Cat &operator=(const Cat &rhs); // Assignment operator
-    virtual ~Cat(); // Destructor
+    Cat();
+    Cat(const Cat &src);
+    Cat &operator=(const Cat &rhs);
+    virtual ~Cat();
 
-    void makeSound() const ; //override; // Override makeSound method
+    void makeSound() const ;
 };
 
 #endif

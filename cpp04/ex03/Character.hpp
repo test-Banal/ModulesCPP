@@ -2,15 +2,18 @@
 #define CHARACTER_HPP
 
 #include <string>
-#include "Materia.hpp"
+#include "MateriaSource.hpp"
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
 #include <iostream>
 
-class Character
+class Character : public ICharacter
 {
 public:
     Character(std::string name);
     Character(const Character &src);
-    ~Character();
+    Character();
+    virtual ~Character();
     Character &operator=(const Character &rhs);
 
     std::string const &getName() const;
@@ -20,6 +23,7 @@ public:
 private:
     std::string _name;
     AMateria* _inventory[4];
+    static const int _sizeInventory = 4;
 };
 
 #endif

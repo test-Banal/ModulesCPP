@@ -3,9 +3,10 @@
 
 #include <string>
 #include "AMateria.hpp"
-#include "IMateria.hpp"
+#include "IMateriaSource.hpp"
 #include "ICharacter.hpp"
 
+class AMateria;
 class ICharacter
 {
 public:

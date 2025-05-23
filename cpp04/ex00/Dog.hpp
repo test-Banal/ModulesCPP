@@ -6,12 +6,12 @@
 class Dog : public Animal
 {
 public:
-    Dog(); // Default constructor
-    Dog(const Dog &src); // Copy constructor
-    Dog &operator=(const Dog &rhs); // Assignment operator
-    virtual ~Dog(); // Destructor
+    Dog();
+    Dog(const Dog &src);
+    Dog &operator=(const Dog &rhs);
+    virtual ~Dog();
 
-    void makeSound() const; //override; // Override makeSound method
+    void makeSound() const;
 };
 
 #endif

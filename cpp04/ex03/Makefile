@@ -6,13 +6,13 @@
 #    By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/12 12:01:27 by aneumann          #+#    #+#              #
-#    Updated: 2025/05/21 15:53:22 by aneumann         ###   ########.fr        #
+#    Updated: 2025/05/22 14:31:06 by aneumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = g++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
-SRC = main.cpp Ice.cpp Cure.cpp AMateria.cpp Character.cpp Materia.cpp
+SRC = main.cpp Ice.cpp Cure.cpp AMateria.cpp Character.cpp MateriaSource.cpp
 OBJ = $(SRC:.cpp=.o)
 NAME = animal
 

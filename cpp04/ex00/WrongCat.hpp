@@ -6,12 +6,12 @@
 class WrongCat : public WrongAnimal
 {
 public:
-    WrongCat(); // Default constructor
-    WrongCat(const WrongCat &src); // Copy constructor
-    WrongCat &operator=(const WrongCat &rhs); // Assignment operator
-    virtual ~WrongCat(); // Destructor
+    WrongCat();
+    WrongCat(const WrongCat &src);
+    WrongCat &operator=(const WrongCat &rhs);
+    virtual ~WrongCat();
 
-    void makeSound() const; // Override makeSound method
+    void makeSound() const;
 };
 
 #endif

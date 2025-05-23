@@ -18,8 +18,8 @@ Cat &Cat::operator=(const Cat &rhs)
     if (this != &rhs)
     {
         Animal::operator=(rhs);
-        delete _brain; // Free the old brain
-        _brain = new Brain(*rhs._brain); // Create a new brain
+        delete _brain; // Free the old brain pour eviter leaks
+        _brain = new Brain(*rhs._brain); // Deep copy
     }
     return *this;
 }
@@ -39,3 +39,4 @@ Brain *Cat::getBrain() const
 {
     return _brain;
 }
+

@@ -8,13 +8,13 @@ class Cat : public Animal
 private:
     Brain *_brain;
 public:
-    Cat(); // Default constructor
-    Cat(const Cat &src); // Copy constructor
-    Cat &operator=(const Cat &rhs); // Assignment operator
-    virtual ~Cat(); // Destructor
+    Cat();
+    Cat(const Cat &src);
+    Cat &operator=(const Cat &rhs);
+    virtual ~Cat();
 
-    void makeSound() const ; //override; // Override makeSound method
-    Brain *getBrain() const; // Getter for Brain pointer
+    void makeSound() const ;
+    Brain *getBrain() const;
 };
 
 #endif

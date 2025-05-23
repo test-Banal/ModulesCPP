@@ -63,23 +63,23 @@ int main()
     delete wrongCat;
     delete directWrongCat;
     
-    // Test supplémentaire - Création sur la pile
-    std::cout << "\n========== Test supplémentaire - Objets sur la pile ==========\n" << std::endl;
+    // // Test supplémentaire - Création sur la pile
+    // std::cout << "\n========== Test supplémentaire - Objets sur la pile ==========\n" << std::endl;
     
-    std::cout << "--- Création des objets sur la pile ---" << std::endl;
-    Animal animalOnStack;
-    Dog dogOnStack;
-    Cat catOnStack;
+    // std::cout << "--- Création des objets sur la pile ---" << std::endl;
+    // Animal animalOnStack;
+    // Dog dogOnStack;
+    // Cat catOnStack;
     
-    std::cout << "\n--- Test makeSound() sur la pile ---" << std::endl;
-    std::cout << "Sound de animalOnStack: ";
-    animalOnStack.makeSound();
-    std::cout << "Sound de dogOnStack: ";
-    dogOnStack.makeSound();
-    std::cout << "Sound de catOnStack: ";
-    catOnStack.makeSound();
+    // std::cout << "\n--- Test makeSound() sur la pile ---" << std::endl;
+    // std::cout << "Sound de animalOnStack: ";
+    // animalOnStack.makeSound();
+    // std::cout << "Sound de dogOnStack: ";
+    // dogOnStack.makeSound();
+    // std::cout << "Sound de catOnStack: ";
+    // catOnStack.makeSound();
+    // // Les objets sur la pile seront détruits automatiquement à la fin de la portée
     
-    // Les objets sur la pile seront détruits automatiquement à la fin de la portée
     std::cout << "\n--- Fin du programme (destruction automatique des objets sur la pile) ---" << std::endl;
     
     return 0;

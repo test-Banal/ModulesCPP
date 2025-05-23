@@ -7,15 +7,15 @@
 class Dog : public Animal
 {
 private:
-    Brain *_brain; // Pointer to Brain object
+    Brain *_brain;
 public:
-    Dog(); // Default constructor
-    Dog(const Dog &src); // Copy constructor
-    Dog &operator=(const Dog &rhs); // Assignment operator
-    virtual ~Dog(); // Destructor
+    Dog(); 
+    Dog(const Dog &src); 
+    Dog &operator=(const Dog &rhs); 
+    virtual ~Dog(); 
 
-    void makeSound() const; //override; // Override makeSound method
-    Brain *getBrain() const; // Getter for Brain
+    void makeSound() const; 
+    Brain *getBrain() const;
 };
 
 #endif

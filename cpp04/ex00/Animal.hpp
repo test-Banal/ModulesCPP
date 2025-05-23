@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneumann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 19:59:49 by aneumann          #+#    #+#             */
-/*   Updated: 2025/05/16 19:59:50 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/05/23 16:06:29 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal
 protected:
     std::string type;
 public:
-    Animal(); //constructeur par défaut
+    Animal();  //constructeur par défaut
     Animal(const Animal &src); //constructeur de recopie
     Animal(const std::string &type); //constructeur avec type
     virtual ~Animal(); //destructeur

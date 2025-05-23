@@ -7,8 +7,8 @@
 class Brain
 {
 private:
-        //std::array<std::string, 100> ideas;
-        std::string ideas[100]; // Tableau de 100 idées , + classique , - avancee mais je ne sais pas si la methode STL est autorisee ici
+        //std::array<std::string, 100> ideas; // interdit dans le sujet mais mieux a l'avenir methode STL
+        std::string ideas[100]; // Tableau de 100 idées
 public:
     Brain();
     Brain(const Brain& other);
@@ -18,6 +18,5 @@ public:
     void setIdea(int index, const std::string& idea);
     std::string getIdea(int index) const;
 };
-
 
 #endif

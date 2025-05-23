@@ -13,16 +13,14 @@ class WrongAnimal
 protected:
     std::string type;
 public: 
-    WrongAnimal(); // Default constructor
-    WrongAnimal(const WrongAnimal &src); // Copy constructor
-    WrongAnimal(const std::string &type); // Constructor with type
-    virtual ~WrongAnimal(); // Destructor
-    WrongAnimal &operator=(const WrongAnimal &rhs); // Assignment operator
+    WrongAnimal();
+    WrongAnimal(const WrongAnimal &src);
+    WrongAnimal(const std::string &type);
+    virtual ~WrongAnimal();
+    WrongAnimal &operator=(const WrongAnimal &rhs);
 
-    void makeSound() const; // Make sound method
-    std::string getType() const; // Get type method
+    void makeSound() const;
+    std::string getType() const;
 };
 
 #endif
-
-//CHECKER CONSTRUCTEUR PAR TYPE
