@@ -1,9 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/05 13:46:42 by aneumann          #+#    #+#             */
+/*   Updated: 2025/06/05 14:54:02 by aneumann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <exception>
 #include <string>
+#include "Form.hpp"
+
+class Form; 
 
 class Bureaucrat
 {
@@ -21,7 +36,7 @@ public:
 
     void incrementGrade(); //tend vers 1 = highest grade
     void decrementGrade(); //tend vers 150 = lowest grade
-	void beSigned(Form &form);	
+	void signForm(Form &form) const; 
 
     class GradeTooHighException : public std::exception
     {
