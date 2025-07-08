@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:48:31 by aneumann          #+#    #+#             */
-/*   Updated: 2025/06/18 20:46:00 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/06/30 16:19:03 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ int main() {
     std::cout << "🧪 Starting tests for Exercise 02...\n";
 
     testShrubbery();
+    
     testRobotomy();
     testPresidential();
     testLowGradeExecution();

@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:46:19 by aneumann          #+#    #+#             */
-/*   Updated: 2025/06/18 20:27:10 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/06/30 16:15:54 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ char const *AForm::GradeTooHighException::what() const throw() {
 
 char const *AForm::GradeTooLowException::what() const throw() {
 	return "Grade too low!";
+}
+
+char const *AForm::FormNotSignedException::what() const throw() {
+	return "Form not signed!";
 }
 
 std::string AForm::getName() const {
