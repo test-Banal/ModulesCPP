@@ -25,3 +25,15 @@ int main(int argc, char **argv) {
         std::cerr << "Usage: ./convert <literal>" << std::endl;
     return 0;
 }
+
+/*
+    example usage:    
+./convert a
+./convert 42
+./convert 4.2
+./convert 4.2f
+./convert nan
+./convert nanf
+./convert -inf
+./convert +inff
+*/
