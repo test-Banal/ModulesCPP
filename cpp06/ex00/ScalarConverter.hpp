@@ -32,8 +32,8 @@ private:
     // Private member function to check if the input is a valid literal
     public:
     static bool isValidLiteral(const std::string &literal);
-
-    static void convert(const std::string const &literal); // Convert function to handle conversion
+    static void convertSpecialLiteral(const std::string &literal);
+    static void convert(const std::string &literal); // Convert function to handle conversion
 };   
 
 
