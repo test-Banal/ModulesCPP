@@ -6,15 +6,15 @@
 #    By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/12 12:01:27 by aneumann          #+#    #+#              #
-#    Updated: 2025/07/16 16:08:12 by aneumann         ###   ########.fr        #
+#    Updated: 2025/07/19 17:01:40 by aneumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = g++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
-SRC = main.cpp Serializer.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = serializer
+NAME = iter
 
 all: $(NAME)
 
