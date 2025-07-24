@@ -6,13 +6,13 @@
 #    By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/12 12:01:27 by aneumann          #+#    #+#              #
-#    Updated: 2025/07/23 20:54:03 by aneumann         ###   ########.fr        #
+#    Updated: 2025/07/24 12:32:30 by aneumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = g++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 OBJ = $(SRC:.cpp=.o)
 NAME = serializer
 

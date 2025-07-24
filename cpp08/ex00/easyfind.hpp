@@ -6,24 +6,19 @@
 #include <iomanip>
 #include <stdint.h>
 #include <algorithm>
-#include <stdexecpt>
+#include <stdexcept>
+
+
+#include "easyfind.tpp"
 
 template <typename T>
-typename T::
-
-
-
-
-
-
-
-
-
-
-
-
-
+typename T::iterator easyfind(T &container, int toFind);
 
 
 #endif
+
+
+
+
+
 
