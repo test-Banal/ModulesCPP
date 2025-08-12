@@ -1,12 +1,7 @@
 #include "Array.hpp"
 
 int main() {
-
-    //     std::cout << "=== Test allocation new int() ===" << std::endl;
-    // int* test = new int();
-    // std::cout << "*test = " << *test << std::endl;
-    // delete test;
-    
+ 
     std::cout << "=== Test du constructeur vide ===" << std::endl;
 Array<int> empty;
 std::cout << "empty.size() = " << empty.size() << std::endl;
@@ -32,7 +27,21 @@ try {
             std::cout << a[i] << " ";
         std::cout << std::endl;
 
-        Array<int> b = a;
+        
+        std::cout << "\n=== Test accès lecture seule sur const Array ===" << std::endl;
+        const Array<int> c(a); // "direct copy initialization" en const
+        std::cout << "c.size() = " << c.size() << std::endl;
+        
+        // Lecture autorisée
+        for (unsigned int i = 0; i < c.size(); i++)
+            std::cout << c[i] << " ";
+        std::cout << std::endl;
+        
+        // Écriture interdite (doit provoquer une erreur de compilation si décommenté)
+        // c[0] = 123; // <- NE DOIT PAS compiler 
+
+        std::cout << "\n=== Test copie d'un Array B ===" << std::endl;
+        Array<int> b = a; //"copie initialisation"
         b[0] = 99;
 
         std::cout << "Array a after modifying b: ";
@@ -51,6 +60,7 @@ try {
     } catch (std::exception& e) {
         std::cerr << "Caught exception: " << e.what() << std::endl;
     }
+
 
     return 0;
 }
