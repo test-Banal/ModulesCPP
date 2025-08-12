@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:46:42 by aneumann          #+#    #+#             */
-/*   Updated: 2025/06/05 14:54:02 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/08/12 17:55:44 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ private:
     const std::string _name;
     int _grade;
 public:
+    Bureaucrat();
     Bureaucrat(const std::string &name, int grade);
     Bureaucrat(const Bureaucrat &src);
     Bureaucrat &operator=(const Bureaucrat &rhs);

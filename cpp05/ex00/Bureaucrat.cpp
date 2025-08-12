@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneumann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:48:50 by aneumann          #+#    #+#             */
-/*   Updated: 2025/06/05 13:48:51 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/08/12 17:50:39 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+//destructeur par defaut
+Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {
+}
+
+//constructeur avec nom et grade
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade) {
     if (grade < 1)
         throw GradeTooHighException();
@@ -19,20 +24,20 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade
         throw GradeTooLowException();
 }
 
+//constructeur de copie
 Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src._name), _grade(src._grade) {
-    // Copy constructor
 }
 
+//operateur d'affectation
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs) {
     if (this != &rhs) {
         _grade = rhs._grade;
     }
     return *this;
-    // Assignment operator
 }
 
+//destructeur
 Bureaucrat::~Bureaucrat() {
-    // Destructor
 }
 
 const std::string &Bureaucrat::getName() const {

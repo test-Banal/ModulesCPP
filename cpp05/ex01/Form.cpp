@@ -6,13 +6,13 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:46:19 by aneumann          #+#    #+#             */
-/*   Updated: 2025/06/05 14:39:27 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/08/12 17:55:13 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-
+//constructeur
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecute) 
 	: _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
 	if (gradeToSign < 1 || gradeToExecute < 1)
@@ -21,17 +21,21 @@ Form::Form(const std::string &name, int gradeToSign, int gradeToExecute)
 		throw GradeTooLowException();
 }
 
+//constructeur par défaut
 Form::Form() : _name("Default"), _signed(false), _gradeToSign(150), _gradeToExecute(150) {
 }
 
+//destructeur
 Form::~Form() {
 	// Destructor implementation can be empty if no dynamic memory is used
 }
 
+//constructeur de copie
 Form::Form(const Form &src) 
 	: _name(src._name), _signed(src._signed), _gradeToSign(src._gradeToSign), _gradeToExecute(src._gradeToExecute) {
 }
 
+//constructeur d'affectation
 Form &Form::operator=(const Form &rhs) {
 	if (this != &rhs) {
 		_signed = rhs._signed;

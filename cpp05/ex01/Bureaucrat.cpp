@@ -6,11 +6,15 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:46:32 by aneumann          #+#    #+#             */
-/*   Updated: 2025/06/05 14:56:36 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/08/12 17:56:14 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+
+Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {
+}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade) {
     if (grade < 1)
@@ -20,7 +24,6 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src._name), _grade(src._grade) {
-    // Copy constructor
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs) {
@@ -28,11 +31,9 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs) {
         _grade = rhs._grade;
     }
     return *this;
-    // Assignment operator
 }
 
 Bureaucrat::~Bureaucrat() {
-    // Destructor
 }
 
 const std::string &Bureaucrat::getName() const {
