@@ -1,13 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aneumann <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 17:55:01 by aneumann          #+#    #+#             */
-/*   Updated: 2025/06/16 17:55:02 by aneumann         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef INTERN_HPP
+#define INTERN_HPP
+
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 
+class Intern {
+public:
+    Intern();
+    Intern(const Intern &other);
+    Intern &operator=(const Intern &other);
+    ~Intern();
+
+    AForm *makeForm(const std::string &formType, const std::string &target);
+};
+
+#endif

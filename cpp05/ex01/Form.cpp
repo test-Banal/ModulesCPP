@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:46:19 by aneumann          #+#    #+#             */
-/*   Updated: 2025/08/12 17:55:13 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/08/26 17:44:04 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Form::Form() : _name("Default"), _signed(false), _gradeToSign(150), _gradeToExec
 
 //destructeur
 Form::~Form() {
-	// Destructor implementation can be empty if no dynamic memory is used
+
 }
 
 //constructeur de copie
@@ -73,7 +73,7 @@ int Form::getGradeToExecute() const {
 	return _gradeToExecute;
 }
 
-
+//surcharge de l'opérateur d'insertion pour afficher les informations du formulaire
 std::ostream &operator<<(std::ostream &os, const Form &form) {
 	os << "Form Name: " << form.getName() 
 	   << ", Signed: " << (form.isSigned() ? "Yes" : "No") 
