@@ -1,5 +1,5 @@
-#ifndef "BITCOINEXCHANGE_HPP"
-#define "BITCOINEXCHANGE_HPP"
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
 
 #include <fstream>
 #include <iostream>
@@ -10,6 +10,8 @@
 class BitcoinExchange {
 	private:
 		//container stock date + valeur
+		std::map<std::string, double> dataBase;
+
 
 	public:
 		BitcoinExchange(); //constructeur par defaut
@@ -17,4 +19,12 @@ class BitcoinExchange {
 		BitcoinExchange &operator=(const BitcoinExchange &other);//operateur d'assignation
 		~BitcoinExchange(); //destructeur
 
-		
+		void readDataBase(std::string fileName);
+		void readInput(std::string fileName);
+		bool isDateValid(const std::string &date);
+		bool isValueValid(const std::string &value);
+		void processLine(const std::string &line);
+		double getExchangeRate(const std::string &date);
+};
+	
+#endif
