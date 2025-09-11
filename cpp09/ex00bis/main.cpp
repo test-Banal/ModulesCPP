@@ -1,13 +1,18 @@
 #include "BitcoinExchange.hpp"
 
-int main()
-{
-	BitcoinExchange	Test1;
+int main(int argc, char** argv) {
+	(void)argv; //car pour linstant pas input.txt dans les tests, donc a enlever par la suite
+	if (argc != 2) {
+        std::cerr << "Error: could not open file." << std::endl;
+        return 1;
+    }
 
-	std::cout << "Test ouverture et lecture fichier .." << std::endl;
-	Test1.loadDatabase("data.csv");
+	if(!valid)
 
-	std::cout << "\nDatabase Size : " << Test1.getDatabaseSize() << std::endl;
+    BitcoinExchange exchange;
+    
+    // Charger la base de données
+    exchange.loadDatabase("data.csv");
 
 	return 0;
 }

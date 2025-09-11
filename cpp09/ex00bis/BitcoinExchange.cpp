@@ -1,5 +1,13 @@
 #include "BitcoinExchange.hpp"
 
+BitcoinExchange::BitcoinExchange() {
+	// Constructeur par defaut
+}
+BitcoinExchange::~BitcoinExchange() {
+	// Destructeur
+}
+
+
 std::string BitcoinExchange::trim(const std::string &str) {
 	size_t start = str.find_first_not_of("\t\r\n");
 	if (start == std::string::npos)
@@ -19,6 +27,39 @@ double BitcoinExchange::parseDoubleStrict(const std::string &str) {
 
 	return result;
 }
+bool BitcoinExchange::validDate(const std::string &date) const {
+    if (date.length() != 10 || date[4] != '-' || date[7] != '-')
+        return false;
+
+    // Vérifier que les positions attendues sont bien des chiffres
+    for (size_t i = 0; i < date.size(); ++i) {
+        if (i == 4 || i == 7)
+            continue;
+        if (!std::isdigit(date[i]))
+            return false;
+    }
+
+    int year = std::atoi(date.substr(0, 4).c_str());
+    int month = std::atoi(date.substr(5, 2).c_str());
+    int day = std::atoi(date.substr(8, 2).c_str());
+
+    if (year < 2009 || year > 2023)
+        return false;
+    if (month < 1 || month > 12)
+        return false;
+
+    int daysInMonth[] = {
+        31, 
+        (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28, 
+        31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+    };
+
+    if (day < 1 || day > daysInMonth[month - 1])
+        return false;
+
+    return true;
+}
+
 
 void BitcoinExchange::loadDatabase(const std::string &csvFile) {
 	std::ifstream file(csvFile.c_str());
