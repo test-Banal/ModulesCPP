@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:00:59 by aneumann          #+#    #+#             */
-/*   Updated: 2025/06/05 14:35:44 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/09/23 22:01:48 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ class Form
 		virtual const char *what() const throw();
 	};
 	
+	//fonction 
 	void beSigned(const Bureaucrat &bureaucrat);
 
+	//getters
 	std::string getName() const;
 	bool isSigned() const;
 	int getGradeToSign() const;

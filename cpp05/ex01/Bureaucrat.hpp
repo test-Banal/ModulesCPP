@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:46:42 by aneumann          #+#    #+#             */
-/*   Updated: 2025/08/12 17:55:44 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/09/23 22:02:32 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ public:
 
     void incrementGrade(); //tend vers 1 = highest grade
     void decrementGrade(); //tend vers 150 = lowest grade
-	void signForm(Form &form) const; 
+	void signForm(Form &form) const; //fonction pour signer un Form
 
     class GradeTooHighException : public std::exception
     {

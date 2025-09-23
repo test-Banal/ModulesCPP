@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:46:32 by aneumann          #+#    #+#             */
-/*   Updated: 2025/08/12 17:56:14 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/09/23 22:34:14 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
 void Bureaucrat::signForm(Form &form) const {
     try {
         form.beSigned(*this);
-        std::cout << _name << " signs " << form.getName() << std::endl;
+        std::cout << _name << " signed " << form.getName() << std::endl;
     } catch (const Form::GradeTooLowException &e) {
-        std::cout << _name << " cannot sign " << form.getName() 
+        std::cout << _name << " couldn’t sign " << form.getName() 
                   << " because their grade is too low." << std::endl;
     }
 }

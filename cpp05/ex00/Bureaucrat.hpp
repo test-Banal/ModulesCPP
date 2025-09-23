@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:49:02 by aneumann          #+#    #+#             */
-/*   Updated: 2025/08/12 17:50:26 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/09/23 20:57:42 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ public:
     Bureaucrat(const Bureaucrat &src);
     Bureaucrat &operator=(const Bureaucrat &rhs);
     virtual ~Bureaucrat();
-
+    
+    //getters
     const std::string &getName() const;
     int getGrade() const;
 
