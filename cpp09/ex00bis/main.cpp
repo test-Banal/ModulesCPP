@@ -7,7 +7,7 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-	if(!valid)
+	//if(!valid) //cad si argv bien parsing
 
     BitcoinExchange exchange;
     
