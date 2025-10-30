@@ -6,15 +6,15 @@
 #    By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/12 12:01:27 by aneumann          #+#    #+#              #
-#    Updated: 2025/10/30 15:03:15 by aneumann         ###   ########.fr        #
+#    Updated: 2025/10/16 15:58:11 by aneumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX = c++
+CXX = g++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = array
+NAME = easyfind
 
 all: $(NAME)
 

@@ -11,14 +11,13 @@ Data* Serializer::deserialize(uintptr_t raw) {
 Serializer::Serializer() {}
 
 Serializer::Serializer(const Serializer &src) {
-    (void)src; // Prevent unused parameter warning
+    (void)src;
 }
 
 Serializer::~Serializer() {}
 
 Serializer &Serializer::operator=(const Serializer &rhs) {
     if (this != &rhs) {
-        // Copy assignment logic if needed
     }
     return *this;
 }

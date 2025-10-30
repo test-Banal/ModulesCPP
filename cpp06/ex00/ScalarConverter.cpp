@@ -2,20 +2,16 @@
 #include <iostream>
 
 ScalarConverter::ScalarConverter() {
-    // Default constructor
 }
 
 ScalarConverter::ScalarConverter(const ScalarConverter &src) {
-    // Copy constructor
-    (void)src; // Avoid unused parameter warning
+    (void)src;
 }
 
 ScalarConverter::~ScalarConverter() {
-    // Destructor
 }
 
 ScalarConverter &ScalarConverter::operator=(const ScalarConverter &rhs) {
-    // Assignment operator
     if (this != &rhs) {
     }
     return *this;
@@ -25,10 +21,10 @@ bool ScalarConverter::isValidLiteral(const std::string &literal) {
     // Check if the literal is a valid scalar type representation
     if (literal.empty()) return false;
 
-    // Check for char literals
+    // Check char 
     if (literal.length() == 1 && std::isprint(literal[0])) return true;
 
-    // Check for int, float, and double literals
+    // Check int, float, et double
     try {
        std::strtod(literal.c_str(), NULL); // Try to convert to double
         return true;

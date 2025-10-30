@@ -29,7 +29,6 @@
 int main() {
     std::cout << "=== Serializer Test ===" << std::endl;
     
-    // Create a Data object with non-empty data members
     Data data;
     data.value = 42;
     data.name = "Hello World";
@@ -46,12 +45,14 @@ int main() {
     std::cout << "  Serialized value: " << serialized << std::endl;
     std::cout << std::endl;
     
+    // Test 2 : 
     // Test 2: Deserialize and get back the pointer
     std::cout << "2. Deserializing..." << std::endl;
     Data* deserialized = Serializer::deserialize(serialized);
     std::cout << "  Deserialized address: " << deserialized << std::endl;
     std::cout << std::endl;
     
+    // test 3 : verifie la valeur retour par rapport au pointeur
     // Test 3: Verify the return value compares equal to original pointer
     std::cout << "3. Comparing pointers..." << std::endl;
     if (deserialized == &data) {
@@ -61,7 +62,7 @@ int main() {
     }
     std::cout << std::endl;
     
-    // Test 4: Verify the Data structure is usable
+    //Test 4 : verifie si la structure data est ok
     std::cout << "4. Testing usability of deserialized data..." << std::endl;
     std::cout << "  Deserialized Value: " << deserialized->value << std::endl;
     std::cout << "  Deserialized Name: " << deserialized->name << std::endl;
@@ -74,7 +75,7 @@ int main() {
     }
     
     std::cout << std::endl;
-    std::cout << "=== Test Complete ===" << std::endl;
+    std::cout << "=== finitoo ===" << std::endl;
     
     return 0;
 }

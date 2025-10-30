@@ -6,11 +6,11 @@
 #    By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/12 12:01:27 by aneumann          #+#    #+#              #
-#    Updated: 2025/07/08 16:49:20 by aneumann         ###   ########.fr        #
+#    Updated: 2025/10/27 14:40:17 by aneumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX = g++
+CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 SRC = main.cpp ScalarConverter.cpp
 OBJ = $(SRC:.cpp=.o)
