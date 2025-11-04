@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 19:09:19 by aneumann          #+#    #+#             */
-/*   Updated: 2025/11/04 15:53:10 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/11/04 20:36:20 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,27 +55,34 @@ void identify(Base* p) {
     }
 }
 
+// void identify(Base& p) {
+//     try {
+//         A& a = dynamic_cast<A&>(p);
+//         std::cout <<"A" << std::endl;
+//         (void)a;
+//         return;
+//     } catch (std::bad_cast&) {}
+    
+//     try { 
+//         B& b = dynamic_cast<B&>(p);
+//         std::cout << "B" << std::endl;
+//         (void)b;
+//         return;
+//     } catch (std::bad_cast&) {}
+    
+//     try {
+//         C& c = dynamic_cast<C&>(p);
+//         std::cout << "C" << std::endl;
+//         (void)c;
+//         return;
+//     } catch(std::bad_cast&) {}
+    
+//     std::cout << " Unknowm type\n";
+// }
+
 void identify(Base& p) {
-    try {
-        A& a = dynamic_cast<A&>(p);
-        std::cout <<"A" << std::endl;
-        (void)a;
-        return;
-    } catch (std::bad_cast&) {}
-    
-    try { 
-        B& b = dynamic_cast<B&>(p);
-        std::cout << "B" << std::endl;
-        (void)b;
-        return;
-    } catch (std::bad_cast&) {}
-    
-    try {
-        C& c = dynamic_cast<C&>(p);
-        std::cout << "C" << std::endl;
-        (void)c;
-        return;
-    } catch(std::bad_cast&) {}
-    
-    std::cout << " Unknowm type\n";
+    try { (void)dynamic_cast<A&>(p); std::cout << "A\n"; return; } catch (...) {}
+    try { (void)dynamic_cast<B&>(p); std::cout << "B\n"; return; } catch (...) {}
+    try { (void)dynamic_cast<C&>(p); std::cout << "C\n"; return; } catch (...) {}
+    std::cout << "Unknown type\n";
 }
