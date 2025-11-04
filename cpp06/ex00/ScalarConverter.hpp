@@ -1,29 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aneumann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/27 19:06:49 by aneumann          #+#    #+#             */
+/*   Updated: 2025/10/27 19:06:52 by aneumann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SCARLARCONVERTER_HPP
 #define SCARLARCONVERTER_HPP
 
 #include <iostream>
-#include <string>
 #include <iomanip>
+#include <string>
+#include <algorithm>
+#include <climits>
+#include <cctype>
 #include <cstdlib>
 
 class ScalarConverter {
-private:
-    static void convertChar(const std::string &literal);
-    static void convertInt(const std::string &literal);
-    static void convertFloat(const std::string &literal);
-    static void convertDouble(const std::string &literal);
-    static void printConversionResults(char c, int i, float f, double d);
-    
-    ScalarConverter(); 
-    ScalarConverter(const ScalarConverter &src); 
-    ~ScalarConverter(); 
-    ScalarConverter &operator=(const ScalarConverter &rhs); 
+    private:
+        ScalarConverter(); 
+        ScalarConverter(const ScalarConverter &src); 
+        ~ScalarConverter(); 
+        ScalarConverter &operator=(const ScalarConverter &rhs); 
 
     public:
-    static bool isValidLiteral(const std::string &literal);
-    static void convertSpecialLiteral(const std::string &literal);
-    static void convert(const std::string &literal);
+        static void convert(const std::string &literal);
 };   
-
 
 #endif

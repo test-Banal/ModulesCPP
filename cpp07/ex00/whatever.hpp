@@ -6,7 +6,7 @@
 /*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:46:28 by aneumann          #+#    #+#             */
-/*   Updated: 2025/10/30 16:56:17 by aneumann         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:23:50 by aneumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,6 @@ void swap(T& a, T& b) {
 }
 
 #endif 
+
+//voir avec char * dnas les test genre char *c = chaine 2;
+//                                     char *d = chaines 1; 
