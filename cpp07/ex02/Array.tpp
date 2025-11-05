@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Array.tpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/05 16:59:35 by aneumann          #+#    #+#             */
+/*   Updated: 2025/11/05 17:04:08 by aneumann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ARRAY_TPP
 #define ARRAY_TPP
 
@@ -11,10 +23,7 @@ Array<T>::Array(unsigned int n) : _size(n) {
     if (n == 0) {
         _data = NULL;
     } else {
-        _data = new T[n];
-        for (unsigned int i = 0; i < n; ++i) {
-            _data[i] = T(); // initialise avec des valeurs par defaut
-        }
+        _data = new T[n](); //new + initialise = value-initialise = tip enonce , au lieu dune boucle 
     }
 }   
 
