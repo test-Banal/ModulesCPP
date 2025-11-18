@@ -16,7 +16,7 @@ public:
     Span &operator=(const Span &other);
     ~Span();
     
-    //fonctions utilitr
+    //fonctions utilitaires
     void addNumber(int num);
     int shortestSpan() const;
     int longestSpan() const;
