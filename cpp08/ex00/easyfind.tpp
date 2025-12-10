@@ -7,6 +7,7 @@ typename T::const_iterator easyfind(T const &container, int toFind)
 {
     typename T::const_iterator it = std::find(container.begin(), container.end(), toFind);
     if (it == container.end())
+        //throw "Element not found";
         throw std::runtime_error("Element not found");
     return it;
 }
@@ -17,6 +18,7 @@ typename T::iterator easyfind(T &container, int toFind)
 {
     typename T::iterator it = std::find(container.begin(), container.end(), toFind);
     if (it == container.end())
+        //throw "Element not found";
         throw std::runtime_error("Element not found");
     return it;
 }

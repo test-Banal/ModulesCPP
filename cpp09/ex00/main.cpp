@@ -1,14 +1,24 @@
 #include "BitcoinExchange.hpp"
+#include <iostream>
 
-int main(int argc, char **argv) {
-    if (argc != 3) {
-        std::cerr << "Usage: " << argv[0] << " <database_file> <input_file>" << std::endl;
+int main(int argc, char** argv)
+{
+    if (argc != 2)
+    {
+        std::cerr << "Error: could not open file." << std::endl;
         return 1;
     }
 
-    BitcoinExchange exchange;
-    exchange.readDataBase(argv[1]);
-    exchange.readInput(argv[2]);
+    try
+    {
+        BitcoinExchange btc("data.csv"); //construit classe en donnant le chemin data.csv
+        btc.processInputFile(argv[1]); 
+    }
+    catch (const std::exception& e) //si pb data.csv ou input.txt alors msg error
+    {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
 
     return 0;
 }

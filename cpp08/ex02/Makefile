@@ -6,7 +6,7 @@
 #    By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/12 12:01:27 by aneumann          #+#    #+#              #
-#    Updated: 2025/11/18 10:37:06 by aneumann         ###   ########.fr        #
+#    Updated: 2025/11/27 13:11:14 by aneumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = easyfind
+NAME = mutant
 
 all: $(NAME)
 

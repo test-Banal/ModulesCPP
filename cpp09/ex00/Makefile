@@ -6,11 +6,11 @@
 #    By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/12 12:01:27 by aneumann          #+#    #+#              #
-#    Updated: 2025/09/05 11:39:21 by aneumann         ###   ########.fr        #
+#    Updated: 2025/12/10 02:20:09 by aneumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX = g++
+CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 SRC = main.cpp BitcoinExchange.cpp
 OBJ = $(SRC:.cpp=.o)

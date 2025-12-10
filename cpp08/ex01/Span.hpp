@@ -24,8 +24,8 @@ public:
     //template BONUS
     template <typename Input>
     void addRange(Input first, Input last) {
-        std::ptrdiff_t count = std::distance(first, last); //long count = std::distance(first, last);
-        if (count < 0) //attention distance renvoie tjrs positif = mais bonne pratique pour la securite
+        std::ptrdiff_t count = std::distance(first, last);
+        if (count < 0) 
             count = 0;
         if (_numbers.size() + static_cast<size_t>(count) > _maxSize)
             throw std::overflow_error("Not enough space");
