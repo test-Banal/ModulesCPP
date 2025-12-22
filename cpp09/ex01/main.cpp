@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/19 19:12:00 by aneumann          #+#    #+#             */
+/*   Updated: 2025/12/22 20:35:04 by aneumann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RPN.hpp"
 #include <iostream>
 
@@ -8,11 +20,11 @@ int main(int argc, char **argv) {
     }
 
     try {
-        int result = RPN::evaluate(argv[1]);//ALGO
-        std::cout << result << std::endl;//si tout ok  affiche resultat
+        long result = RPN::evaluate(argv[1]);
+        std::cout << result << std::endl;
     } catch (const std::exception &e) {
-        (void)e; // on ignore le message détaillé pour ne pas polluer la sortie car tjrs e avec methode catch mais ici on demande que "Error"
-        std::cerr << "Error" << std::endl; //msg erreur (parsing, operateur invalide, div / 0)
+        (void)e;
+        std::cerr << "Error" << std::endl; 
         return 1;
     }
 

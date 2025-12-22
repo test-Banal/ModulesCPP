@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/19 19:11:45 by aneumann          #+#    #+#             */
-/*   Updated: 2025/12/22 20:51:34 by aneumann         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "BitcoinExchange.hpp"
 
 #include <iostream> //stl
@@ -17,20 +5,23 @@
 #include <sstream> //stringstream
 #include <cctype> //isspace
 
+const float BitcoinExchange::kMinValue = 0.0f; //demander dnas le sujet /plus lisible en constante
+const float BitcoinExchange::kMaxValue = 1000.0f;
 
-std::string BitcoinExchange::trim(const std::string &s)
+namespace //fonction locale au fichier
 {
-    size_t start = 0;
-    while (start < s.size() &&
-           std::isspace(static_cast<unsigned char>(s[start])))
-        ++start;
+    std::string trim(const std::string &s) //trim qui enleve white space ?
+    {
+        std::string::size_type start = 0;
+        while (start < s.size() && std::isspace(static_cast<unsigned char>(s[start]))) //rapelle pourquoi static cast<unsigned char> ?
+            ++start;
 
-    size_t end = s.size();
-    while (end > start &&
-           std::isspace(static_cast<unsigned char>(s[end - 1])))
-        --end;
+        std::string::size_type end = s.size();
+        while (end > start && std::isspace(static_cast<unsigned char>(s[end - 1])))
+            --end;
 
-    return s.substr(start, end - start);
+        return s.substr(start, end - start);
+    }
 }
 
 BitcoinExchange::BitcoinExchange() {}
@@ -54,13 +45,14 @@ BitcoinExchange::~BitcoinExchange() {}
 
 void BitcoinExchange::_loadDatabase(const std::string &dbPath)
 {
-    std::ifstream dbFile(dbPath.c_str());
+    std::ifstream dbFile(dbPath.c_str()); //ouverture fichier =InputFileStream ppour
+    // lire dans un fichier text
     if (!dbFile.is_open())
         throw CouldNotOpenFileException();
 
     std::string line;
 
-    if (!std::getline(dbFile, line))
+    if (!std::getline(dbFile, line)) //on lit la premiere ligne du fichier
         throw InvalidDatabaseException();
 
     while (std::getline(dbFile, line))
@@ -68,37 +60,37 @@ void BitcoinExchange::_loadDatabase(const std::string &dbPath)
         if (line.empty())
             continue;
 
-        std::stringstream ss(line);
+        std::stringstream ss(line); //ss chaine en gros de token grace a stringstream
         std::string date;
         std::string priceStr;
         float       price;
 
-        if (std::getline(ss, date, ',') && std::getline(ss, priceStr))
+        if (std::getline(ss, date, ',') && std::getline(ss, priceStr)) // split apres virgule
         {
-            date     = trim(date);
+            date     = trim(date); //trim pour propreter 
             priceStr = trim(priceStr);
 
             if (date.empty() || priceStr.empty())
                 continue;
 
-            std::stringstream priceSS(priceStr); 
-            if (priceSS >> price)             
+            std::stringstream priceSS(priceStr); //transforme string en flux puis 
+            if (priceSS >> price)               // puis ici en float = transfert, si reussi , on met dans la map
             {
-                _database[date] = price; 
+                _database[date] = price; //ici quoon fait notre container final map avec date et prix
             }
         }
     }
 
-    if (_database.empty()) 
+    if (_database.empty()) //petit check final
         throw InvalidDatabaseException();
 }
 
-bool BitcoinExchange::_isValidDate(const std::string& date) const
+bool BitcoinExchange::_isValidDate(const std::string &date) const
 {
     if (date.length() != 10 || date[4] != '-' || date[7] != '-')
         return false;
 
-    int year, month, day;
+    int  year, month, day;
     char dash1, dash2;
     std::istringstream ss(date);
     ss >> year >> dash1 >> month >> dash2 >> day;
@@ -108,27 +100,7 @@ bool BitcoinExchange::_isValidDate(const std::string& date) const
 
     if (month < 1 || month > 12)
         return false;
-
-    int daysInMonth[] = {
-        31,
-        28,
-        31,
-        30,
-        31, 
-        30, 
-        31,
-        31,
-        30,
-        31,
-        30,
-        31  
-    };
-
-    bool leap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
-    if (leap)
-        daysInMonth[1] = 29;
-
-    if (day < 1 || day > daysInMonth[month - 1])
+    if (day < 1 || day > 31)
         return false;
 
     return true;
@@ -138,15 +110,16 @@ float BitcoinExchange::_findExchangeRate(const std::string& date) const
 {
     std::map<std::string, float>::const_iterator it = _database.lower_bound(date);
 
-    if (it != _database.end() && it->first == date) 
+    if (it != _database.end() && it->first == date) //date exacte trouvee
         return it->second; 
 
-    if (it == _database.begin())
+    if (it == _database.begin()) //pas trouve
         return -1.0f;
 
-    --it;
+    --it; //si pas trouve exacte : la date la plus proche
     return it->second;
 }
+//first/second vient stl : cle/valeur
 
 void BitcoinExchange::processInputFile(const std::string &inputPath) const
 {
@@ -157,7 +130,7 @@ void BitcoinExchange::processInputFile(const std::string &inputPath) const
     std::string line;
 
     if (!std::getline(inputFile, line))
-        return;
+        return; // fichier vide : rien à faire
 
     while (std::getline(inputFile, line))
     {
@@ -169,13 +142,13 @@ void BitcoinExchange::processInputFile(const std::string &inputPath) const
         std::string valuePart;
 
         
-        if (!std::getline(ss, datePart, '|') || !std::getline(ss, valuePart))  
+        if (!std::getline(ss, datePart, '|') || !std::getline(ss, valuePart)) //split apres | 
         {
             std::cerr << "Error: bad input => " << line << std::endl;
             continue;
         }
 
-        std::string date     = trim(datePart);
+        std::string date     = trim(datePart); //propreter = enleve espace superflu
         std::string valueStr = trim(valuePart);
 
         if (date.empty() || valueStr.empty())
@@ -186,7 +159,7 @@ void BitcoinExchange::processInputFile(const std::string &inputPath) const
 
        
         double value;
-        std::stringstream valueSS(valueStr);
+        std::stringstream valueSS(valueStr);  // converti en nombre
         if (!(valueSS >> value))
         {
             std::cerr << "Error: bad input => " << line << std::endl;
@@ -198,12 +171,12 @@ void BitcoinExchange::processInputFile(const std::string &inputPath) const
             std::cerr << "Error: bad input => " << date << std::endl;
             continue;
         }
-        if (value < 0)
+        if (value < kMinValue)
         {
             std::cerr << "Error: not a positive number." << std::endl;
             continue;
         }
-        if (value > 1000)
+        if (value > kMaxValue)
         {
             std::cerr << "Error: too large a number." << std::endl;
             continue;
@@ -212,7 +185,7 @@ void BitcoinExchange::processInputFile(const std::string &inputPath) const
         float rate = _findExchangeRate(date);
         if (rate < 0.0f)
         {
-            std::cerr << "Error: bad input or before creation btc => " << date << std::endl;
+            std::cerr << "Error: bad input => " << date << std::endl;
             continue;
         }
 

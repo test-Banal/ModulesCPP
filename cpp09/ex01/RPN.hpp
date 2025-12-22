@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aneumann <aneumann@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/19 19:12:27 by aneumann          #+#    #+#             */
+/*   Updated: 2025/12/22 20:38:38 by aneumann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef RPN_HPP
 # define RPN_HPP
 
@@ -5,14 +17,13 @@
 
 class RPN {
 public:
-    static int evaluate(const std::string &expression);
+    static long evaluate(const std::string &expression);
 
 private:
     RPN();
-    RPN(const RPN &);
-    RPN &operator=(const RPN &);
+    RPN(const RPN &other);
+    RPN &operator=(const RPN &other);
     ~RPN();
 };
 
 #endif
-
